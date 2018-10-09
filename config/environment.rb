@@ -1,7 +1,7 @@
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
-require_relative '../lib/.'
+require_relative '../lib/cutie_switches'
 require_relative '../apps/web/application'
 
 Hanami.configure do
@@ -14,9 +14,9 @@ Hanami.configure do
     # Available options:
     #
     #  * SQL adapter
-    #    adapter :sql, 'sqlite://db/._development.sqlite3'
-    #    adapter :sql, 'postgresql://localhost/._development'
-    #    adapter :sql, 'mysql://localhost/._development'
+    #    adapter :sql, 'sqlite://db/cutie_switches_development.sqlite3'
+    #    adapter :sql, 'postgresql://localhost/cutie_switches_development'
+    #    adapter :sql, 'mysql://localhost/cutie_switches_development'
     #
     adapter :sql, ENV.fetch('DATABASE_URL')
 
@@ -28,7 +28,7 @@ Hanami.configure do
   end
 
   mailer do
-    root 'lib/./mailers'
+    root 'lib/cutie_switches/mailers'
 
     # See http://hanamirb.org/guides/mailers/delivery
     delivery :test
