@@ -22,7 +22,7 @@ cdn_url = "http://cdn.hanolab.net"
 switches.each do |k, v|
   Switch.create(
     name: v,
-    image_url: "#{Settings.api_url}/#{k.to_s}.png",
-    sound_url: "#{Settings.api_url}/#{k.to_s}.mp3",
+    image_url: "#{cdn_url}/#{k.to_s}.png",
+    sound_url: "#{cdn_url}/#{k.to_s}.mp3",
   )
 end
