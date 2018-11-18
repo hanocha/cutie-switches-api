@@ -1,18 +1,24 @@
 default: &default
   adapter: postgresql
-  host: db
-  username: postgres
-  password:
   pool: 5
 
 development:
   <<: *default
+  host: db
+  username: postgres
+  password:
   database: cutie_switches_development
 
 test:
   <<: *default
+  host: db
+  username: postgres
+  password:
   database: cutie_switches_test
 
 production:
   <<: *default
   database: cutie_switches_production
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_URL'] %>
